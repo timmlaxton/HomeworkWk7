@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+    <li v-for="(item, index) in items" :class="item.done ? 'done': ' toDo'">
+    <span>{{item.name}}</span>
+    <span v-if="item.done">Done!</span>
+      <button v-if="!item.done" v-on:click="buyItem(index)">Done</button>
+    </li>
+    </ul>
+
+    <input v-model="newItem" type="text"/>
+    <button v-on:click="saveNewItem">Save New Item</button>
+  </div>
+</body>
+</html>
